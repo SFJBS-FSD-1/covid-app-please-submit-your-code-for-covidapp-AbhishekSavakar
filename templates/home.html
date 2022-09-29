@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Covid data page</title>
+
+</head>
+
+<center>
+    <body text="#E3C770" bgcolor="#0F3460">
+    <div class="col-md-6 col-md-offset-3">
+        <h1> Hello Welcome to Covid data page</h1>
+        <form method="post" action="/">
+            <input type="text" placeholder="Enter Country" name="country">
+            <button type="submit">Submit</button>
+
+        </form>
+        {% if data.code==200 %}
+        <h1>{{data.name}}</h1>
+        <h2>Total Confirmed Cases: {{data.confirmed}}</h2>
+        <h2>Total Deaths: {{data.deaths}} </h2>
+        {% elif data.code == 404 %}
+        <h3>{{data.message}}!!!!!</h3>
+        {% endif %}
+
+    </div>
+    </body>
+
+</center>
+
+</html>
+
+
